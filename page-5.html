@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <meta name="description" content="" />
+      <meta name="author" content="" />
+      <title>프로그램 이미지 관리 - 하나 아이착한 금융교육</title>
+      <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+      <link href="css/styles.css" rel="stylesheet" />
+   </head>
+   <body class="sb-nav-fixed">
+      <nav class="sb-topnav navbar navbar-expand navbar-light bg-light">
+         <!-- Navbar Brand-->
+         <a class="navbar-brand ps-3 text-center" href="page-1.html">
+            <img src="img/hana-mainlogo.svg" alt="logo" />
+         </a>
+         <!-- Sidebar Toggle-->
+         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+         <!-- Navbar Search-->
+         <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0"></form>
+         <!-- Navbar-->
+         <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#!">로그아웃</a></li>
+               </ul>
+            </li>
+         </ul>
+      </nav>
+      <div id="layoutSidenav">
+         <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-light" id="sidenavAccordion">
+               <div class="sb-sidenav-menu">
+                  <div class="nav">
+                     <div class="sb-sidenav-menu-heading">리스트</div>
+                     <a class="nav-link" href="page-1.html">
+                        <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                        회원 정보
+                     </a>
+                     <a class="nav-link" href="page-2.html">
+                        <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                        교육 진행도
+                     </a>
+                     <a class="nav-link" href="page-3.html">
+                        <div class="sb-nav-link-icon"><i class="fa-solid fa-file"></i></div>
+                        이용약관
+                     </a>
+                     <a class="nav-link" href="page-4.html">
+                        <div class="sb-nav-link-icon"><i class="fa-solid fa-file"></i></div>
+                        개인정보 처리방침
+                     </a>
+                     <a class="nav-link" href="page-5.html">
+                        <div class="sb-nav-link-icon"><i class="fa-solid fa-image"></i></div>
+                        프로그램 이미지 관리
+                     </a>
+                  </div>
+               </div>
+               <div class="sb-sidenav-footer">
+                  <div class="small">하나 아이착한 금융교육</div>
+                  <span>관리자 페이지</span>
+               </div>
+            </nav>
+         </div>
+
+         <!-- 토스트 메시지 -->
+         <div class="toast photo-delete-popup" role="alert" aria-live="assertive" aria-atomic="true" data-delay="10000">
+            <div class="toast-header justify-content-between">
+               <strong class="mr-auto">사진 삭제</strong>
+               <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+               <p>사진을 삭제하시겠습니까? 삭제된 사진은 복구할 수 없습니다.</p>
+               <div class="mt-2">
+                  <button id="confirm-delete-btn" type="button" class="btn btn-danger mr-2">예</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="toast">아니오</button>
+               </div>
+            </div>
+         </div>
+
+         <div id="layoutSidenav_content">
+            <main class="page-5">
+               <div class="container-fluid px-4">
+                  <h1 class="mt-4">프로그램 이미지 관리</h1>
+                  <form action="" class="btn-wrap">
+                     <input type="button" value="이미지 업로드" class="btn btn-primary imgup-btn" onclick="document.getElementById('fileInput').click();" />
+                     <input type="file" id="fileInput" style="display: none" />
+                  </form>
+                  <div class="card mb-4">
+                     <div class="card-body">
+                        <table id="datatablesSimple">
+                           <thead>
+                              <tr>
+                                 <th>No.</th>
+                                 <th>이미지 주소</th>
+                                 <th>업로드 일자</th>
+                                 <th>이미지 삭제</th>
+                              </tr>
+                           </thead>
+                           <tfoot>
+                              <tr>
+                                 <th>No.</th>
+                                 <th>이미지 주소</th>
+                                 <th>업로드 일자</th>
+                                 <th>이미지 삭제</th>
+                              </tr>
+                           </tfoot>
+                           <tbody>
+                              <tr>
+                                 <td>1</td>
+                                 <td><a href="">https://hanaigood.com/224588</a></td>
+                                 <td>2022/02/02</td>
+                                 <td>
+                                    <input id="delete-photo-btn" type="button" class="btn" value="삭제" />
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td>2</td>
+                                 <td>https://hanaigood.com/224588</td>
+                                 <td>2022/02/02</td>
+                                 <td>삭제</td>
+                              </tr>
+                              <tr>
+                                 <td>3</td>
+                                 <td>https://hanaigood.com/224588</td>
+                                 <td>2022/02/02</td>
+                                 <td>삭제</td>
+                              </tr>
+                              <tr>
+                                 <td>4</td>
+                                 <td>https://hanaigood.com/224588</td>
+                                 <td>2022/02/02</td>
+                                 <td>삭제</td>
+                              </tr>
+                              <tr>
+                                 <td>5</td>
+                                 <td>https://hanaigood.com/224588</td>
+                                 <td>2022/02/02</td>
+                                 <td>삭제</td>
+                              </tr>
+                              <tr>
+                                 <td>6</td>
+                                 <td>https://hanaigood.com/224588</td>
+                                 <td>2022/02/02</td>
+                                 <td>삭제</td>
+                              </tr>
+                              <tr>
+                                 <td>7</td>
+                                 <td>https://hanaigood.com/224588</td>
+                                 <td>2022/02/02</td>
+                                 <td>삭제</td>
+                              </tr>
+                              <tr>
+                                 <td>8</td>
+                                 <td>https://hanaigood.com/224588</td>
+                                 <td>2022/02/02</td>
+                                 <td>삭제</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+            </main>
+         </div>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+      <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+      <script src="js/scripts.js"></script>
+      <script src="js/datatables-simple.js"></script>
+      <script>
+         document.getElementById("fileInput").addEventListener("change", handleFileSelect, false);
+
+         function handleFileSelect(evt) {
+            var files = evt.target.files;
+            // 파일 업로드 처리를 수행하는 코드를 작성합니다.
+         }
+
+         $(document).ready(function () {
+            // 토스트 요소 찾기
+            var toastEl = $(".toast").toast({
+               autohide: false,
+            });
+
+            // 삭제 버튼 클릭 이벤트 처리
+            $("#delete-photo-btn").click(function () {
+               toastEl.toast("show"); // 토스트 요소 보이기
+            });
+
+            // 예 버튼 클릭 이벤트 처리
+            $("#confirm-delete-btn").click(function () {
+               // 파일 삭제 코드 추가
+               toastEl.toast("hide"); // 토스트 요소 숨기기
+            });
+         });
+      </script>
+   </body>
+</html>
